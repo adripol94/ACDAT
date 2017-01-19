@@ -16,7 +16,7 @@ public class Enfermedad {
 	@Column(name="Nombre")
 	private String nombre;
 	
-	@OneToMany(mappedBy="enfermedad", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="Enfermedad", cascade=CascadeType.ALL)
 	private Set<EnfermedadMascota> enfermedadesMascotas;
 	
 	public Enfermedad(){}
