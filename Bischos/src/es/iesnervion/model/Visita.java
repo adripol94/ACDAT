@@ -8,20 +8,14 @@ import javax.persistence.*;
 @Table(name="BI_Visitas")
 public class Visita {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name = "Fecha")
 	private Date fecha;
 	
-	@Column(name = "Temperatura")
 	private short temperatura;
 	
-	@Column(name = "peso")
 	private int peso;
 	
-	@OneToMany(mappedBy="id", cascade=CascadeType.ALL)
 	private Mascota mascota;
 	
 	public Visita(){}
