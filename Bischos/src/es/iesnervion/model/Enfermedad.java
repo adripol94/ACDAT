@@ -9,11 +9,14 @@ import javax.persistence.*;
 @Table(name="dbo.BI_Enfermedades")
 public class Enfermedad {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
 	@Column(name="Nombre")
 	private String nombre;
 	
+	@ManyToMany(mappedBy="enfermedad", cascade = CascadeType.ALL)
 	private Set<EnfermedadMascota> enfermedadesMascotas;
 	
 	public Enfermedad(){}

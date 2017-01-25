@@ -6,14 +6,22 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="BI_Mascotas_Enfermedades")
-public class EnfermedadMascota {
+public class EnfermedadMascota{
 	
+	@Id
+	@ManyToMany
+	@JoinColumn(name="IDEnfermedad")
 	private Enfermedad enfermedad;
 	
+	@Id
+	@ManyToMany
+	@JoinColumn(name="Mascota")
 	private Mascota mascota;
 	
+	@Column(name="FechaInicio")
 	private Date fechaInicio;
 	
+	@Column(name="FechaCura")
 	private Date fechaCura;
 	
 	public EnfermedadMascota(){}

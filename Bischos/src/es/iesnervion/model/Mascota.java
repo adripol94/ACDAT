@@ -29,6 +29,7 @@ public class Mascota {
 	@Column(name="Alias")
 	private String alias;
 
+	//mappedBy nombre del atributo del ManytoOne o ManytoOne
 	@OneToMany(mappedBy="IDVisitas", cascade=CascadeType.ALL)
 	private Set<Visita> visitas = new HashSet();
 	

@@ -25,7 +25,7 @@ public class Cliente {
 	@Column(name="Nombre")
 	private String nombre;
 	
-	@OneToMany(mappedBy="id", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="CodigoPropietario", cascade=CascadeType.ALL)
 	private Set<Mascota> mascotas = new HashSet();
 	
 	public Cliente(){}
