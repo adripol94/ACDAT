@@ -2,10 +2,26 @@ package es.iesnervion.model;
 
 import java.sql.Date;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="BI_Visitas")
 public class Visita {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
+	@Column(name="Fecha")
 	private Date fecha;
+	
+	@Column(name="Temperatura")
+	private byte temperatura;
+	
+	@Column(name="Peso")
 	private int peso;
+	
+	@OneToMany
+	@JoinColumn(name="Mascota")
 	private Mascota mascota;
 	
 	public Visita(){}

@@ -29,14 +29,15 @@ public class Mascota {
 	@Column(name="Alias")
 	private String alias;
 	
-	@OneToMany(mappedBy="idVisita", cascade=CascadeType.ALL)
+	
+	//Mirar si es OneToOne o OneToMany
 	private Set<Visita> visitas = new HashSet();
 	
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name="CodigoPropietario")
 	private Cliente cliente;
 	
-	@ManyToMany(mappedBy="mascota", cascade=CascadeType.ALL)
+	
 	private Set<EnfermedadMascota> enfermedadesMascotas;
 	
 	
