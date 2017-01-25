@@ -1,12 +1,13 @@
 package es.iesnervion.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="BI_Visitas")
-public class Visita {
+public class Visita implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;

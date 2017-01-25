@@ -8,7 +8,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		read();
-
+		System.out.println("Finish");
 	}
 
 	private static void read() {

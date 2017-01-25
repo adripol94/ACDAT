@@ -1,5 +1,6 @@
 package es.iesnervion.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Set;
 
@@ -8,7 +9,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="BI_Mascotas")
-public class Mascota {
+public class Mascota implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -29,15 +30,15 @@ public class Mascota {
 	@Column(name="Alias")
 	private String alias;
 
-	//mappedBy nombre del atributo del ManytoOne o ManytoOne
-	@OneToMany(mappedBy="IDVisitas", cascade=CascadeType.ALL)
+	//mappedBy nombre del atributo del OneToMany (Visita)
+	@OneToMany(mappedBy="id", cascade=CascadeType.ALL)
 	private Set<Visita> visitas;
 	
 	@ManyToOne
 	@JoinColumn(name="CodigoPropietario")
 	private Cliente cliente;
 	
-	@ManyToMany(mappedBy="mascota", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="mascota", cascade=CascadeType.ALL)
 	private Set<EnfermedadMascota> enfermedadesMascotas;
 	
 	
