@@ -9,12 +9,12 @@ import javax.persistence.*;
 public class EnfermedadMascota{
 	
 	@Id
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name="IDEnfermedad")
 	private Enfermedad enfermedad;
 	
 	@Id
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name="Mascota")
 	private Mascota mascota;
 	

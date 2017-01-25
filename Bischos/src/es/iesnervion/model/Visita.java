@@ -20,7 +20,7 @@ public class Visita {
 	@Column(name="Peso")	
 	private int peso;
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name="Mascota")
 	private Mascota mascota;
 	

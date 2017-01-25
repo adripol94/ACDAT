@@ -1,10 +1,10 @@
 package es.iesnervion.model;
 
 import java.sql.Date;
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
+
 
 @Entity
 @Table(name="BI_Mascotas")
@@ -31,7 +31,7 @@ public class Mascota {
 
 	//mappedBy nombre del atributo del ManytoOne o ManytoOne
 	@OneToMany(mappedBy="IDVisitas", cascade=CascadeType.ALL)
-	private Set<Visita> visitas = new HashSet();
+	private Set<Visita> visitas;
 	
 	@ManyToOne
 	@JoinColumn(name="CodigoPropietario")

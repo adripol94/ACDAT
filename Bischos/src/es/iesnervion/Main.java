@@ -17,10 +17,6 @@ public class Main {
 			sessionfactory = BichosFactory.getSessionFactory();
 			s = sessionfactory.openSession();
 			
-			
-			
-			
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
