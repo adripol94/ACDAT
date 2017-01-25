@@ -17,11 +17,12 @@ public class Visita {
 	@Column(name="Temperatura")
 	private byte temperatura;
 	
-	@Column(name="Peso")
+	@Column(name="Peso")	
 	private int peso;
 	
 	@OneToMany
 	@JoinColumn(name="Mascota")
+
 	private Mascota mascota;
 	
 	public Visita(){}

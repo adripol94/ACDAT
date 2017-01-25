@@ -7,37 +7,28 @@ import java.util.Set;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Mascota")
+@Table(name="BI_Mascotas")
 public class Mascota {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="Raza")
 	private String raza;
 	
-	@Column(name="Especie")
 	private String especie;
 	
-	@Column(name="FechaNacimiento")
 	private Date fechaNacimiento;
 	
-	@Column(name="FechaFallecimiento")
 	private Date fechaFallecimiento;
 	
-	@Column(name="Alias")
 	private String alias;
-	
-	
-	//Mirar si es OneToOne o OneToMany
+
 	private Set<Visita> visitas = new HashSet();
 	
 	@ManyToOne
 	@JoinColumn(name="CodigoPropietario")
+
 	private Cliente cliente;
-	
-	
+
 	private Set<EnfermedadMascota> enfermedadesMascotas;
 	
 	
