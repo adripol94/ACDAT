@@ -9,16 +9,23 @@ import javax.persistence.*;
 @Table(name="dbo.BI_Clientes")
 public class Cliente {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
+	@Column(name="Telefono")
 	private String tlf;
 	
+	@Column(name="Direccion")
 	private String direccion;
 	
+	@Column(name="NumeroCuenta")
 	private String numCuenta;
 	
+	@Column(name="Nombre")
 	private String nombre;
 	
+	@OneToMany(mappedBy="id", cascade=CascadeType.ALL)
 	private Set<Mascota> mascotas = new HashSet();
 	
 	public Cliente(){}

@@ -22,7 +22,6 @@ public class Visita {
 	
 	@OneToMany
 	@JoinColumn(name="Mascota")
-
 	private Mascota mascota;
 	
 	public Visita(){}
