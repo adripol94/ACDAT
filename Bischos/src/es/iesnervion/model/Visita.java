@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="BI_Visitas")
-public class Visita implements Serializable{
+public class Visita implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
@@ -65,6 +65,20 @@ public class Visita implements Serializable{
 
 	public void setMascota(Mascota mascota) {
 		this.mascota = mascota;
+	}
+
+	public byte getTemperatura() {
+		return temperatura;
+	}
+
+	public void setTemperatura(byte temperatura) {
+		this.temperatura = temperatura;
+	}
+
+	@Override
+	public String toString() {
+		return "Visita [id=" + id + ", fecha=" + fecha + ", temperatura=" + temperatura + ", peso=" + peso
+				+ ", mascota=" + mascota + "]";
 	}
 	
 	
