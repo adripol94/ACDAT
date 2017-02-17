@@ -1,20 +1,21 @@
 package es.iesnervion.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="BI_Mascotas_Enfermedades")
-public class EnfermedadMascota{
+public class EnfermedadMascota implements Serializable{
 	
 	@Id
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name="IDEnfermedad")
 	private Enfermedad enfermedad;
 	
 	@Id
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name="Mascota")
 	private Mascota mascota;
 	

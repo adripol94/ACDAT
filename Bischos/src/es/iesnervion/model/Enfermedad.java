@@ -1,5 +1,6 @@
 package es.iesnervion.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -7,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="dbo.BI_Enfermedades")
-public class Enfermedad {
+public class Enfermedad implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -16,7 +17,7 @@ public class Enfermedad {
 	@Column(name="Nombre")
 	private String nombre;
 	
-	@ManyToMany(mappedBy="enfermedad", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="enfermedad", cascade = CascadeType.ALL)
 	private Set<EnfermedadMascota> enfermedadesMascotas;
 	
 	public Enfermedad(){}
